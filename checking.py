@@ -12,18 +12,25 @@ def starting():
 	print("Starting Nmap RELQ at", today.date().isoformat() ,now.strftime("%H:%M"))
 	print("Nmap scan report for ", name, user_ip)
 
-def reading_sockets(importent_ports):
+def reading_ports(importent_ports):
 	ports = []
+	service = []
+	models = []
 	with open(importent_ports, 'r') as f:
 		for line in f:
 			if line and not line.startswith('#'):
 				parts = line.split()
 				if len(parts) >= 2:
 					port_protocol = parts[1]
+					service_name = parts[0]
 					port = port_protocol.split('/')[0]
+					model = port_protocol.split('/')[1]
 					if port.isdigit():
 						ports.append(int(port))
-	return ports
+					models.append(model)
+					service.append(service_name)
+
+	return ports, service, models
 	
 def socket_setup():
 	server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -45,16 +52,18 @@ def socket_setup():
 
 		if result == 0:
 			print("PORT", "  STATE", "SERVICE")
-			print(port, "/tcp", "open")
+			print(port, models, "open")
 		if result == 110:
-			print(port, "/tcp", "filtered")
+			print(port, models, "filtered")
 
 	else:
 		closed_ports = 0
-		status_array= []
+		status_array = []
 		ports_array = []
-		ports = reading_sockets("/home/adel/Desktop/cyber/project2/Nmap/importent_ports")
-		for port in ports:
+		models_array = []
+		service_array = []
+		ports, service, models = reading_ports("/home/adel/Desktop/cyber/project2/Nmap/importent_ports")
+		for port,service_name,model in zip(ports, service, models):
 			try:
 				result = server.connect_ex((ip, port))
 			except OverflowError:
@@ -72,13 +81,16 @@ def socket_setup():
 			else:
 				ports_array.append(port)
 				status_array.append(result)
+				models_array.append(model)
+				service_array.append(service_name)
 
 		print("Not shown:", closed_ports,"closed ports")
 		print("PORT", "   STATE", "SERVICE")
-		for p in ports_array and status_array:
-			if status_array[p] == 0:
-				print(*ports_array, "/tcp", "open")
-			elif status_array[p] == 110:
-				print(*ports_array, "/tcp", "filtered")
+		for p, s, m, a in zip(ports_array, status_array, models_array, service_array):
+			if s == 0:
+				print(p, m, "open", a)
+			elif s == 110:
+				print(p, m, "filltered", a)
+
 
 
