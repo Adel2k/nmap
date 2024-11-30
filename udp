@@ -1,0 +1,822 @@
+ipp	631/udp		# Internet Printing Protocol
+snmp	161/udp		# Simple Net Mgmt Proto
+netbios-ns	137/udp		# NETBIOS Name Service
+ntp	123/udp		# Network Time Protocol
+netbios-dgm	138/udp		# NETBIOS Datagram Service
+ms-sql-m	1434/udp		# Microsoft-SQL-Monitor
+microsoft-ds	445/udp	
+msrpc	135/udp		# Microsoft RPC services
+dhcps	67/udp		# DHCP/Bootstrap Protocol Server
+domain	53/udp		# Domain Name Server
+netbios-ssn	139/udp		# NETBIOS Session Service
+isakmp	500/udp	
+dhcpc	68/udp		# DHCP/Bootstrap Protocol Client
+route	520/udp		# router routed -- RIP
+upnp	1900/udp		# Universal PnP
+nat-t-ike	4500/udp		# IKE Nat Traversal negotiation (RFC3947)
+syslog	514/udp		# BSD syslogd(8)
+unknown	49152/udp	
+snmptrap	162/udp		# snmp-trap
+tftp	69/udp		# Trivial File Transfer
+zeroconf	5353/udp		# Mac OS X Bonjour/Zeroconf port
+rpcbind	111/udp		# portmapper, rpcbind
+unknown	49154/udp	
+L2TP	1701/udp	
+puparp	998/udp	
+vsinet	996/udp	
+maitrd	997/udp	
+applix	999/udp		# Applix ac
+netassistant	3283/udp		# Apple Remote Desktop Net Assistant reporting feature
+unknown	49153/udp	
+radius	1812/udp		# RADIUS authentication protocol (RFC 2138)
+profile	136/udp		# PROFILE Naming System
+msantipiracy	2222/udp		# Microsoft Office OS X antipiracy network monitor
+nfs	2049/udp		# networked file system
+omad	32768/udp		# OpenMosix Autodiscovery Daemon
+sip	5060/udp		# Session Initiation Protocol (SIP)
+blackjack	1025/udp		# network blackjack
+ms-sql-s	1433/udp		# Microsoft-SQL-Server
+IISrpc-or-vat	3456/udp		# also VAT default data
+http	80/udp		# World Wide Web HTTP
+bakbonenetvault	20031/udp		# BakBone NetVault primary communications port
+win-rpc	1026/udp		# Commonly used to send MS Messenger spam
+echo	7/udp	
+radacct	1646/udp		# radius accounting
+radius	1645/udp		# radius authentication
+http-rpc-epmap	593/udp		# HTTP RPC Ep Map
+ntalk	518/udp		# (talkd)
+dls-monitor	2048/udp	
+serialnumberd	626/udp		# Mac OS X Server serial number (licensing) daemon
+unknown	1027/udp	
+xdmcp	177/udp		# X Display Manager Control Protocol
+h323gatestat	1719/udp		# H.323 Gatestat
+svrloc	427/udp		# Server Location
+retrospect	497/udp	
+sun-answerbook	8888/tcp		# ddi-udp-1 | ddi-tcp-1 | Sun Answerbook HTTP server.  Or gnump3d streaming music server | NewsEDGE server TCP (TCP 1) | NewsEDGE server UDP (UDP 1)
+krb524	4444/udp	
+unknown	1023/udp	
+unknown	65024/udp	
+chargen	19/udp		# ttytst source Character Generator
+discard	9/udp		# sink null
+unknown	49193/udp	
+tacacs	49/udp		# Login Host Protocol (TACACS)
+kerberos-sec	88/udp		# Kerberos (v5)
+ms-lsa	1028/udp	
+wdbrpc	17185/udp		# vxWorks WDB remote debugging ONCRPC
+h225gatedisc	1718/udp		# H.225 gatekeeper discovery
+unknown	49186/udp	
+cisco-sccp	2000/udp		# cisco SCCP (Skinny Client Control Protocol)
+BackOrifice	31337/udp		# cDc Back Orifice remote admin tool
+unknown	49201/udp	
+unknown	49192/udp	
+printer	515/udp		# spooler (lpd)
+rockwell-csp2	2223/udp		# Rockwell CSP2
+https	443/udp	
+unknown	49181/udp	
+radacct	1813/udp		# RADIUS accounting protocol (RFC 2139)
+cfdptkt	120/udp	
+pcmail-srv	158/udp		# PCMail Server
+unknown	49200/udp	
+adobeserver-3	3703/udp		# Adobe Server 3
+unknown	32815/udp	
+qotd	17/udp		# Quote of the Day
+upnp	5000/udp		# also complex-main
+sometimes-rpc6	32771/udp		# Sometimes an RPC port on my Solaris box (rusersd)
+unknown	33281/udp	
+iad1	1030/udp		# BBN IAD
+exp2	1022/udp		# RFC3692-style Experiment 2 (*)    [RFC4727]
+asf-rmcp	623/udp		# ASF Remote Management and Control
+filenet-rpc	32769/udp		# Filenet RPC
+pcanywherestat	5632/udp	
+ndmp	10000/udp		# Network Data Management Protocol
+unknown	49194/udp	
+unknown	49191/udp	
+unknown	49182/udp	
+unknown	49156/udp	
+wap-wsp	9200/udp		# WAP connectionless session services
+unknown	30718/udp	
+unknown	49211/udp	
+unknown	49190/udp	
+unknown	49188/udp	
+unknown	49185/udp	
+commplex-link	5001/udp	
+llmnr	5355/udp		# LLMNR
+sometimes-rpc4	32770/udp		# Sometimes an RPC port on my Solaris box
+unknown	37444/udp	
+unknown	34861/udp	
+unknown	34555/udp	
+iad3	1032/udp		# BBN IAD
+squid-ipc	3130/udp	
+lockd	4045/udp		# NFS lock daemon/manager
+iad2	1031/udp		# BBN IAD
+unknown	49196/udp	
+unknown	49158/udp	
+time	37/udp		# timserver
+symantec-av	2967/udp		# Symantec AntiVirus (rtvscan.exe)
+icq	4000/udp		# AOL ICQ instant messaging clent-server communication
+ftps-data	989/udp		# ftp protocol, data, over TLS/SSL
+apple-sasl	3659/udp		# Apple SASL
+rfa	4672/udp		# remote file access server
+unknown	34862/udp	
+telnet	23/udp	
+unknown	49195/udp	
+unknown	49189/udp	
+unknown	49187/udp	
+unknown	49162/udp	
+veritas-ucl	2148/udp		# Veritas Universal Communication Layer
+unknown	41524/udp	
+amanda	10080/udp		# Amanda Backup Util
+sometimes-rpc8	32772/udp		# Sometimes an RPC port on my Solaris box (status)
+timbuktu	407/udp	
+nameserver	42/udp		# Host Name Server
+unknown	33354/udp	
+activesync-notify	1034/udp		# Windows Mobile device ActiveSync Notifications
+admdog	5101/tcp		# talarian-udp | talarian-tcp | (chili!soft asp) | Talarian_TCP | Talarian_UDP
+unknown	49199/udp	
+unknown	49180/udp	
+unknown	1001/udp	
+ms-wbt-server	3389/udp		# Microsoft Remote Display Protocol (aka ms-term-serv, microsoft-rdp)
+gnutella	6346/udp		# Gnutella file sharing protocol
+ftp	21/udp		# File Transfer [Control]
+daytime	13/udp	
+talk	517/udp		# BSD talkd(8)
+instl_bootc	1068/udp		# Installation Bootstrap Proto. Cli.
+X11:1	6001/udp	
+hp-hcip	1782/udp	
+ftps	990/udp		# ftp protocol, control, over TLS/SSL
+fpitp	1045/udp		# Fingerprint Image Transfer Protocol
+danf-ak2	1041/udp		# AK2 Product
+keysrvr	19283/udp		# Key Server for SASSAFRAS
+unknown	49210/udp	
+unknown	49209/udp	
+unknown	49208/udp	
+unknown	49205/udp	
+unknown	49202/udp	
+unknown	49184/udp	
+unknown	49179/udp	
+unknown	49171/udp	
+sd	9876/udp		# Session Director
+sygatefw	39213/udp		# Sygate Firewall management port version 3.0 build 521 and above
+mdbs_daemon	800/udp	
+ldap	389/udp		# Lightweight Directory Access Protocol
+kpasswd5	464/udp		# Kerberos (v5)
+sbl	1039/udp		# Streamlined Blackhole
+nsstp	1036/udp		# Nebula Secure Segment Transfer Protocol
+mtqp	1038/udp		# Message Tracking Query Protocol
+timbuktu-srv3	1419/udp		# Timbuktu Service 3 Port
+osu-nms	192/udp		# OSU Network Monitoring System
+smux	199/udp	
+unknown	44968/udp	
+ufsd	1008/udp	
+unknown	49166/udp	
+unknown	49159/udp	
+unknown	1024/udp	
+netinfo-local	1033/udp		# local netinfo port
+unknown	22986/udp	
+unknown	19682/udp	
+ssh	22/udp		# Secure Shell Login
+globe	2002/udp	
+unknown	11487/udp	
+secure-aux-bus	664/udp	
+exp1	1021/udp		# RFC3692-style Experiment 1 (*)    [RFC4727]
+unknown	58002/udp	
+unknown	49172/udp	
+unknown	49168/udp	
+unknown	49165/udp	
+unknown	49163/udp	
+boinc	1043/udp		# BOINC Client Control
+X11	6000/udp	
+vrtstrapserver	1885/udp		# Veritas Trap Server
+unknown	7938/udp	
+unknown	1019/udp	
+td-postman	1049/udp		# Tobit David Postman VPMN
+sentinel-lm	5093/udp		# Sentinel LM
+nat-pmp	5351/udp	
+dcutility	1044/udp		# Dev Consortium Utility
+corba-iiop	683/udp	
+apc-3052	3052/udp		# APC 3052
+securid	5500/udp		# SecurID
+unknown	27892/udp	
+unknown	16680/udp	
+sometimes-rpc10	32773/udp		# Sometimes an RPC port on my Solaris box (rquotad)
+unknown	41058/udp	
+unknown	35777/udp	
+auth	113/udp		# ident, tap, Authentication Service
+unknown	52225/udp	
+unknown	49174/udp	
+unknown	49169/udp	
+unknown	49160/udp	
+X11:4	6004/udp	
+vfo	1056/udp		# VFO
+sophos	8193/udp		# Sophos Remote Management System
+neod1	1047/udp		# Sun's NEO Object Request Broker
+mdc-portmapper	685/udp		# MDC Port Mapper
+leoip	1886/udp		# Leonardo over IP
+hcp-wismar	686/udp		# Hardware Control Protocol Wismar
+landesk-cba	38293/udp	
+hp-managed-node	782/udp		# hp performance data managed node
+concert	786/udp	
+landesk-cba	38037/udp	
+sometimes-rpc12	32774/udp		# Sometimes an RPC port on my Solaris box (rusersd)
+wpgs	780/udp	
+socks	1080/udp	
+sometimes-rpc14	32775/udp		# Sometimes an RPC port on my Solaris box (status)
+xfr	682/udp		# XFR
+unknown	983/udp	
+unknown	6971/udp	
+unknown	6970/udp	
+unknown	1014/udp	
+fpo-fns	1066/udp	
+epnsdp	2051/udp		# EPNSDP
+brvread	1054/udp		# BRVREAD
+apc-9950	9950/udp		# APC 9950
+mmcc	5050/udp		# multimedia conference control tool
+hp-collector	781/udp		# hp performance data collector
+unknown	31891/udp	
+unknown	31681/udp	
+unknown	31073/udp	
+unknown	30365/udp	
+unknown	30303/udp	
+unknown	29823/udp	
+unknown	28547/udp	
+unknown	27195/udp	
+unknown	25375/udp	
+unknown	22996/udp	
+unknown	22846/udp	
+unknown	21383/udp	
+unknown	20389/udp	
+unknown	20126/udp	
+unknown	20019/udp	
+unknown	19616/udp	
+unknown	19503/udp	
+unknown	19120/udp	
+unknown	18449/udp	
+unknown	16947/udp	
+unknown	16832/udp	
+unknown	42172/udp	
+unknown	33355/udp	
+sometimes-rpc22	32779/udp		# Sometimes an RPC port on my Solaris box
+unknown	53571/udp	
+unknown	52503/udp	
+unknown	49215/udp	
+unknown	49213/udp	
+unknown	49212/udp	
+unknown	49204/udp	
+unknown	49198/udp	
+unknown	49175/udp	
+unknown	49167/udp	
+rfe	5002/udp		# Radio Free Ethernet
+halflife	27015/udp		# Half-life game server
+filemaker	5003/udp		# Filemaker Server - http://www.filemaker.com/ti/104289.html
+afs3-fileserver	7000/udp		# file server itself
+who	513/udp		# BSD rwhod(8)
+lansource	1485/udp	
+syscomlan	1065/udp		# SYSCOMLAN
+neod2	1048/udp		# Sun's NEO Object Request Broker
+ff-fms	1090/udp		# FF Fieldbus Message Specification
+corba-iiop-ssl	684/udp		# CORBA IIOP SSL
+cft-0	1761/udp	
+bacula-sd	9103/udp		# Bacula Storage Daemon
+ams	1037/udp		# AMS
+sometimes-rpc18	32777/udp		# Sometimes an RPC port on my Solaris box (walld)
+apertus-ldp	539/udp		# Apertus Technologies Load Determination
+phonebook	767/udp		# phone
+mobileip-agent	434/udp	
+bo2k	54321/udp		# Back Orifice 2K Default Port
+squid-snmp	3401/udp		# Squid proxy SNMP port
+mcidas	112/udp		# McIDAS Data Transmission Protocol
+ock	1000/udp	
+gnutella2	6347/udp		# Gnutella2 file sharing protocol
+biff	512/udp		# comsat
+rsvp_tunnel	363/udp	
+unknown	45441/udp	
+unknown	41370/udp	
+unknown	41081/udp	
+unknown	40915/udp	
+unknown	40732/udp	
+unknown	40708/udp	
+unknown	40441/udp	
+unknown	40116/udp	
+unknown	39888/udp	
+unknown	36206/udp	
+unknown	35438/udp	
+unknown	34892/udp	
+unknown	34125/udp	
+unknown	33744/udp	
+unknown	32931/udp	
+unknown	32818/udp	
+directplaysrvr	47624/udp		# Direct Play Server
+candp	42508/udp		# Computer Associates network discovery protocol
+wpages	776/udp	
+rap	38/udp		# Route Access Protocol
+sometimes-rpc16	32776/udp		# Sometimes an RPC port on my Solaris box (sprayd)
+unknown	64513/udp	
+unknown	63555/udp	
+unknown	62287/udp	
+unknown	61370/udp	
+unknown	58640/udp	
+unknown	58631/udp	
+unknown	56141/udp	
+unknown	54281/udp	
+unknown	51717/udp	
+unknown	50612/udp	
+unknown	49503/udp	
+unknown	49207/udp	
+unknown	49197/udp	
+unknown	49176/udp	
+unknown	49173/udp	
+unknown	49170/udp	
+unknown	49161/udp	
+unknown	49157/udp	
+sometimes-rpc1	1012/udp		# This is rstatd on my openBSD box
+dbase	217/udp		# dBASE Unix
+acmaint_transd	775/udp	
+ws-discovery	3702/udp		# Web Service Discovery
+vcom-tunnel	8001/udp		# VCOM Tunnel
+unknown	959/udp	
+unknown	9199/udp	
+unknown	8181/udp	
+tambora	9020/udp		# TAMBORA
+sanity	643/udp		# SANity
+realm-rusd	688/udp		# ApplianceWare managment protocol
+pkix-3-ca-ra	829/udp		# PKIX-3 CA/RA
+netarx	1040/udp		# Netarx Netcare
+mxxrlogin	1035/udp		# MX-XR RPC
+jstel	1064/udp		# JSTEL
+ideafarm-door	902/udp		# self documenting Door: send 0x00 for info
+fjicl-tep-a	1901/udp		# Fujitsu ICL Terminal Emulator Program A
+cognex-insight	1069/udp	
+asipregistry	687/udp	
+apc-2160	2160/udp		# APC 2160
+afrog	1042/udp		# Subnet Roaming
+unknown	32528/udp	
+unknown	32385/udp	
+unknown	32345/udp	
+unknown	31731/udp	
+unknown	31625/udp	
+unknown	31365/udp	
+unknown	31195/udp	
+unknown	31189/udp	
+unknown	31109/udp	
+unknown	31059/udp	
+unknown	30975/udp	
+unknown	30704/udp	
+unknown	30697/udp	
+unknown	30656/udp	
+unknown	30544/udp	
+unknown	30263/udp	
+unknown	29977/udp	
+unknown	29810/udp	
+unknown	29256/udp	
+unknown	29243/udp	
+unknown	29078/udp	
+unknown	28973/udp	
+unknown	28840/udp	
+unknown	28641/udp	
+unknown	28543/udp	
+unknown	28493/udp	
+unknown	28465/udp	
+unknown	28369/udp	
+unknown	28122/udp	
+unknown	27899/udp	
+unknown	27707/udp	
+unknown	27482/udp	
+unknown	27473/udp	
+unknown	26966/udp	
+unknown	26872/udp	
+unknown	26720/udp	
+unknown	26415/udp	
+unknown	26407/udp	
+unknown	25931/udp	
+unknown	25709/udp	
+unknown	25546/udp	
+unknown	25541/udp	
+unknown	25462/udp	
+unknown	25337/udp	
+unknown	25280/udp	
+unknown	25240/udp	
+unknown	25157/udp	
+unknown	24910/udp	
+unknown	24854/udp	
+unknown	24644/udp	
+unknown	24606/udp	
+unknown	24594/udp	
+unknown	24511/udp	
+unknown	24279/udp	
+unknown	24007/udp	
+unknown	23980/udp	
+unknown	23965/udp	
+unknown	23781/udp	
+unknown	23679/udp	
+unknown	23608/udp	
+unknown	23557/udp	
+unknown	23531/udp	
+unknown	23354/udp	
+unknown	23176/udp	
+unknown	23040/udp	
+unknown	22914/udp	
+unknown	22799/udp	
+unknown	22739/udp	
+unknown	22695/udp	
+unknown	22692/udp	
+unknown	22341/udp	
+unknown	22055/udp	
+unknown	21902/udp	
+unknown	21803/udp	
+unknown	21621/udp	
+unknown	21354/udp	
+unknown	21298/udp	
+unknown	21261/udp	
+unknown	21212/udp	
+unknown	21131/udp	
+unknown	20359/udp	
+unknown	20004/udp	
+unknown	19933/udp	
+unknown	19687/udp	
+unknown	19600/udp	
+unknown	19489/udp	
+unknown	19332/udp	
+unknown	19322/udp	
+unknown	19294/udp	
+unknown	19197/udp	
+unknown	19165/udp	
+unknown	19130/udp	
+unknown	19039/udp	
+unknown	19017/udp	
+unknown	18980/udp	
+unknown	18835/udp	
+unknown	18582/udp	
+unknown	18360/udp	
+unknown	18331/udp	
+unknown	18234/udp	
+unknown	18004/udp	
+unknown	17989/udp	
+unknown	17939/udp	
+unknown	17888/udp	
+unknown	17616/udp	
+unknown	17615/udp	
+unknown	17573/udp	
+unknown	17459/udp	
+unknown	17455/udp	
+unknown	17091/udp	
+unknown	16918/udp	
+unknown	16430/udp	
+unknown	16402/udp	
+icl-twobase4	25003/udp	
+alta-ana-lm	1346/udp		# Alta Analytics License Manager
+ftp-data	20/udp		# File Transfer [Default Data]
+compressnet	2/udp		# Management Utility
+sometimes-rpc24	32780/udp		# Sometimes an RPC port on my Solaris box
+fasttrack	1214/udp		# Kazaa File Sharing
+cycleserv2	772/udp	
+snmp-tcp-port	1993/udp		# cisco SNMP TCP port
+genie	402/udp		# Genie Protocol
+notify	773/udp	
+Trinoo_Register	31335/udp		# Trinoo distributed attack tool Bcast Daemon registration port
+acmaint_dbd	774/udp	
+x11	6050/udp		# X Window System
+X11:2	6002/udp	
+wfremotertm	1046/udp		# WebFilter Remote Monitor
+ups-engine	3664/udp		# UPS Engine Port
+unknown	9877/udp	
+unknown	965/udp	
+unknown	838/udp	
+unknown	814/udp	
+unknown	8010/udp	
+unknown	1007/udp	
+startron	1057/udp		# STARTRON
+search-agent	1234/udp		# Infoseek Search Agent
+remote-as	1053/udp		# Remote Assistant (RA)
+pvuniwien	1081/udp		# PVUNIWIEN
+polestar	1060/udp	
+nati-logos	2343/udp		# nati logos
+mctp	1100/udp		# MCTP
+irdmi	8000/udp		# iRDMI
+ideafarm-panic	903/udp		# self documenting Panic Door: send 0x00 for info
+hpvmmcontrol	1124/udp		# HP VMM Control
+ftranhc	1105/udp		# FTRANHC
+etlservicemgr	9001/udp		# ETL Service Manager
+enl	1804/udp		# ENL
+cslistener	9000/udp		# CSlistener
+cma	1050/udp		# CORBA Management Agent
+ansyslmd	1055/udp	
+nimreg	1059/udp	
+ingreslock	1524/udp		# ingres
+rplay	5555/udp	
+telelpathstart	5010/udp	
+sometimes-rpc20	32778/udp		# Sometimes an RPC port on my Solaris box (rstatd)
+unknown	48761/udp	
+unknown	48489/udp	
+unknown	48455/udp	
+unknown	48255/udp	
+unknown	48189/udp	
+unknown	48078/udp	
+unknown	47981/udp	
+unknown	47915/udp	
+unknown	47772/udp	
+unknown	47765/udp	
+unknown	46836/udp	
+unknown	46532/udp	
+unknown	46093/udp	
+unknown	45928/udp	
+unknown	45818/udp	
+unknown	45722/udp	
+unknown	45685/udp	
+unknown	45380/udp	
+unknown	45247/udp	
+unknown	44946/udp	
+unknown	44923/udp	
+unknown	44508/udp	
+unknown	44334/udp	
+unknown	44253/udp	
+unknown	44190/udp	
+unknown	44185/udp	
+unknown	44179/udp	
+unknown	44160/udp	
+unknown	44101/udp	
+unknown	43967/udp	
+unknown	43824/udp	
+unknown	43686/udp	
+unknown	43514/udp	
+unknown	43370/udp	
+unknown	43195/udp	
+unknown	43094/udp	
+unknown	42639/udp	
+unknown	42627/udp	
+unknown	42577/udp	
+unknown	42557/udp	
+unknown	42434/udp	
+unknown	42431/udp	
+unknown	42313/udp	
+unknown	42056/udp	
+unknown	41971/udp	
+unknown	41967/udp	
+unknown	41896/udp	
+unknown	41774/udp	
+unknown	41702/udp	
+unknown	41638/udp	
+unknown	41446/udp	
+unknown	41308/udp	
+unknown	40866/udp	
+unknown	40847/udp	
+unknown	40805/udp	
+unknown	40724/udp	
+unknown	40711/udp	
+unknown	40622/udp	
+unknown	40539/udp	
+unknown	40019/udp	
+unknown	39723/udp	
+unknown	39714/udp	
+unknown	39683/udp	
+unknown	39632/udp	
+unknown	39217/udp	
+unknown	38615/udp	
+unknown	38498/udp	
+unknown	38412/udp	
+unknown	38063/udp	
+unknown	37843/udp	
+unknown	37813/udp	
+unknown	37783/udp	
+unknown	37761/udp	
+unknown	37602/udp	
+unknown	37393/udp	
+unknown	37212/udp	
+unknown	37144/udp	
+unknown	36945/udp	
+unknown	36893/udp	
+unknown	36778/udp	
+unknown	36669/udp	
+unknown	36489/udp	
+unknown	36458/udp	
+unknown	36384/udp	
+unknown	36108/udp	
+unknown	35794/udp	
+unknown	35702/udp	
+unknown	34855/udp	
+unknown	34796/udp	
+unknown	34758/udp	
+unknown	34580/udp	
+unknown	34579/udp	
+unknown	34578/udp	
+unknown	34577/udp	
+unknown	34570/udp	
+unknown	34433/udp	
+unknown	34422/udp	
+unknown	34358/udp	
+unknown	34079/udp	
+unknown	34038/udp	
+unknown	33872/udp	
+unknown	33866/udp	
+unknown	33717/udp	
+unknown	33459/udp	
+unknown	33249/udp	
+unknown	33030/udp	
+unknown	32798/udp	
+Trinoo_Bcast	27444/udp		# Trinoo distributed attack tool Master
+bacnet	47808/udp		# Building Automation and Control Networks
+confluent	1484/udp		# Confluent License Manager
+compressnet	3/udp		# Compression Process
+instl_boots	1067/udp		# Installation Bootstrap Proto. Serv.
+unknown	64727/udp	
+unknown	64590/udp	
+unknown	64481/udp	
+unknown	64080/udp	
+unknown	63420/udp	
+unknown	62958/udp	
+unknown	62699/udp	
+unknown	62677/udp	
+unknown	62575/udp	
+unknown	62154/udp	
+unknown	61961/udp	
+unknown	61685/udp	
+unknown	61550/udp	
+unknown	61481/udp	
+unknown	61412/udp	
+unknown	61322/udp	
+unknown	61319/udp	
+unknown	61142/udp	
+unknown	61024/udp	
+unknown	60423/udp	
+unknown	60381/udp	
+unknown	60172/udp	
+unknown	59846/udp	
+unknown	59765/udp	
+unknown	59207/udp	
+unknown	59193/udp	
+unknown	58797/udp	
+unknown	58419/udp	
+unknown	58178/udp	
+unknown	58075/udp	
+unknown	57977/udp	
+unknown	57958/udp	
+unknown	57843/udp	
+unknown	57813/udp	
+unknown	57410/udp	
+unknown	57409/udp	
+unknown	57172/udp	
+unknown	55587/udp	
+unknown	55544/udp	
+unknown	55043/udp	
+unknown	54925/udp	
+unknown	54807/udp	
+unknown	54711/udp	
+unknown	54114/udp	
+unknown	54094/udp	
+unknown	53838/udp	
+unknown	53589/udp	
+unknown	53037/udp	
+unknown	53006/udp	
+unknown	52144/udp	
+unknown	51972/udp	
+unknown	51905/udp	
+unknown	51690/udp	
+unknown	51586/udp	
+unknown	51554/udp	
+unknown	51456/udp	
+unknown	51255/udp	
+unknown	50919/udp	
+unknown	50708/udp	
+unknown	50497/udp	
+unknown	50164/udp	
+unknown	50099/udp	
+unknown	49968/udp	
+unknown	49640/udp	
+unknown	49396/udp	
+unknown	49393/udp	
+unknown	49360/udp	
+unknown	49350/udp	
+unknown	49306/udp	
+unknown	49262/udp	
+unknown	49259/udp	
+unknown	49226/udp	
+unknown	49222/udp	
+unknown	49220/udp	
+unknown	49216/udp	
+unknown	49214/udp	
+unknown	49178/udp	
+unknown	49177/udp	
+unknown	49155/udp	
+nim	1058/udp	
+edonkey	4666/udp		# eDonkey file sharing (Donkey)
+vat-control	3457/udp		# VAT default control
+teedtap	559/udp	
+esl-lm	1455/udp		# ESL License Manager
+netcheque	4008/udp		# NetCheque accounting
+omserv	764/udp	
+at-7	207/udp		# AppleTalk Unused
+valisys-lm	1457/udp		# Valisys License Manager
+unknown	944/udp	
+unknown	9370/udp	
+unknown	826/udp	
+unknown	789/udp	
+unknown	16086/udp	
+unknown	1020/udp	
+unknown	1013/udp	
+scol	1200/udp		# SCOL
+rmc	657/udp		# RMC
+rib-slm	3296/udp		# Rib License Manager
+pt2-discover	1101/udp		# PT2-DISCOVER
+optima-vnet	1051/udp	
+nmap	689/udp		# NMAP
+msdp	639/udp		# MSDP
+ms-cluster-net	3343/udp		# MS Cluster Net
+jmb-cds1	8900/udp		# JMB-CDS 1
+gmrupdateserv	1070/udp		# GMRUpdateSERV
+digiman	2362/udp	
+dbm	2345/udp	
+cplscrambler-in	1087/udp		# CPL Scrambler Internal
+cplscrambler-al	1088/udp		# CPL Scrambler Alarm Log
+cardax	1072/udp		# CARDAX
+apc-2161	2161/udp		# APC 2161
+mbap	502/udp		# Modbus Application Protocol
+zep	17754/udp		# Encap. ZigBee Packets
+unknown	32760/udp	
+unknown	32750/udp	
+unknown	32727/udp	
+unknown	32611/udp	
+unknown	32607/udp	
+unknown	32546/udp	
+unknown	32506/udp	
+unknown	32499/udp	
+unknown	32495/udp	
+unknown	32479/udp	
+unknown	32469/udp	
+unknown	32446/udp	
+unknown	32430/udp	
+unknown	32425/udp	
+unknown	32422/udp	
+unknown	32415/udp	
+unknown	32404/udp	
+unknown	32382/udp	
+unknown	32368/udp	
+unknown	32359/udp	
+unknown	32352/udp	
+unknown	32326/udp	
+unknown	32273/udp	
+unknown	32262/udp	
+unknown	32219/udp	
+unknown	32216/udp	
+unknown	32185/udp	
+unknown	32132/udp	
+unknown	32129/udp	
+unknown	32124/udp	
+unknown	32066/udp	
+unknown	32053/udp	
+unknown	32044/udp	
+unknown	31999/udp	
+unknown	31963/udp	
+unknown	31918/udp	
+unknown	31887/udp	
+unknown	31882/udp	
+unknown	31852/udp	
+unknown	31803/udp	
+unknown	31794/udp	
+unknown	31792/udp	
+unknown	31783/udp	
+unknown	31750/udp	
+unknown	31743/udp	
+unknown	31735/udp	
+unknown	31732/udp	
+unknown	31720/udp	
+unknown	31692/udp	
+unknown	31673/udp	
+unknown	31609/udp	
+unknown	31602/udp	
+unknown	31599/udp	
+unknown	31584/udp	
+unknown	31569/udp	
+unknown	31560/udp	
+unknown	31521/udp	
+unknown	31520/udp	
+unknown	31481/udp	
+unknown	31428/udp	
+unknown	31412/udp	
+unknown	31404/udp	
+unknown	31361/udp	
+unknown	31352/udp	
+unknown	31350/udp	
+unknown	31343/udp	
+unknown	31334/udp	
+unknown	31284/udp	
+unknown	31267/udp	
+unknown	31266/udp	
+unknown	31261/udp	
+unknown	31202/udp	
+unknown	31199/udp	
+unknown	31180/udp	
+unknown	31162/udp	
+unknown	31155/udp	
+unknown	31137/udp	
+unknown	31134/udp	
+unknown	31133/udp	
+unknown	31115/udp	
+unknown	31112/udp	
+unknown	31084/udp	
+unknown	31082/udp	
+unknown	31051/udp	
+unknown	31049/udp	
+unknown	31036/udp	
+unknown	31034/udp	
+unknown	30996/udp	
+unknown	30943/udp	
+unknown	30932/udp	
