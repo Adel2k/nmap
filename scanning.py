@@ -22,6 +22,7 @@ def scan_for_range(port, service, models, ip):
 
 #############################################################
 def scan_all(ports, service, models, ip):
+	global flag_for_range
 	closed_ports = 0
 	status_array = []
 	ports_array = []
@@ -81,14 +82,15 @@ def scan_one(port, ports, ip, service):
 	server.close()
 
 #############################################################
-def socket_setup(ip, port):
+def socket_setup(ip, port, args):
+	global flag_for_range
 	try:
 		ports, service, models = reading_ports("/home/adel/Desktop/cyber/project2/Nmap/importent_ports_tcp")
 	except FileNotFoundError:
 		print("Error: No such file or directory")
 		exit(1)
 
-	if len(sys.argv) == 4:
+	if args.p:
 		scan_one(port, ports, ip, service)
 	else:
 		scan_all(ports, service, models, ip)

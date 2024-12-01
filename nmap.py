@@ -2,11 +2,10 @@ from scanning import *
 
 #############################################################
 def starting():
-	global flag_for_range
-	flag_for_range = False
 	parser = argparse.ArgumentParser(description="Can pass hostnames, IP addresses, networks, etc.")
 	parser.add_argument("host", help="Hostname or IP address to nmap.")
 	parser.add_argument("-p", "--port", type=parse_ports, help="Specify a port (optional).")
+	parser.add_argument("-sU", action="store_true", help="Specify a scan (optional).")
 	args = parser.parse_args()
 
 
@@ -26,13 +25,15 @@ def starting():
 		print("Host is unreachable.")
 	else:
 		print(f"Host is up ({latency:.2f}s latency).")
-	return args.host, args.port
+	return args, args.host, args.port
 
 #############################################################
 def main():
 	if len(sys.argv) > 1:
-		ip, ports, = starting()
-		socket_setup(ip, ports)
+		args, ip, ports, = starting()
+		global flag_for_range
+		flag_for_range = False
+		socket_setup(ip, ports, args)
 
 	else: #if no args
 		print("nmap -v -A scanme.nmap.org")
