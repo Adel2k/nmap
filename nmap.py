@@ -4,8 +4,8 @@ from checking import starting, socket_setup
 
 def main():
 	if len(sys.argv) > 1:
-		ip = starting()
-		socket_setup(ip)
+		ip, ports, = starting()
+		socket_setup(ip, ports)
 
 	else: #if no args
 		print("nmap -v -A scanme.nmap.org")
@@ -15,3 +15,4 @@ def main():
 
 if __name__ == "__main__":
 	main()
+
