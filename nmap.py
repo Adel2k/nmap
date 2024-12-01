@@ -1,5 +1,6 @@
 from scanning import *
 
+#############################################################
 def starting():
 	global flag_for_range
 	flag_for_range = False
@@ -27,6 +28,7 @@ def starting():
 		print(f"Host is up ({latency:.2f}s latency).")
 	return args.host, args.port
 
+#############################################################
 def main():
 	if len(sys.argv) > 1:
 		ip, ports, = starting()

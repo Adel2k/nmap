@@ -6,6 +6,7 @@ import time
 import sys
 from utils_parsing import *
 
+#############################################################
 def scan_for_range(port, service, models, ip):
 	print("PORT", "  STATE", "SERVICE")
 	for p in port:
@@ -19,6 +20,7 @@ def scan_for_range(port, service, models, ip):
 		if result == 0:
 			print(models[p - 2], "open", service[p - 2])
 
+#############################################################
 def scan_all(ports, service, models, ip):
 	closed_ports = 0
 	status_array = []
@@ -51,6 +53,7 @@ def scan_all(ports, service, models, ip):
 			elif s == 11:
 				print(m, "filltered", a)
 
+#############################################################
 def scan_one(port, ports, ip, service):
 	server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	try:
@@ -77,7 +80,7 @@ def scan_one(port, ports, ip, service):
 		print(f"{port[0]}/tcp  closed {ss}")
 	server.close()
 
-
+#############################################################
 def socket_setup(ip, port):
 	try:
 		ports, service, models = reading_ports("/home/adel/Desktop/cyber/project2/Nmap/importent_ports_tcp")

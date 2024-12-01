@@ -2,6 +2,7 @@ import re
 import ipaddress
 import argparse
 
+#############################################################
 def if_ip(arg):
 	try:
 		ipaddress.ip_address(arg)
@@ -16,11 +17,13 @@ def if_ip(arg):
 
 	return False
 
+#############################################################
 def find_service(port, ports, servie):
 	for p, s in zip(ports,servie):
 		if port[0] == p:
 			return s
 
+#############################################################
 def reading_ports(importent_ports):
 	ports = []
 	service = []
@@ -42,6 +45,7 @@ def reading_ports(importent_ports):
 	return ports, service, models
 
 
+#############################################################
 def parse_ports(arg):
 	global flag_for_range
 	if '-' in arg:
