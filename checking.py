@@ -24,9 +24,11 @@ def if_ip(arg):
 
 
 def parse_ports(arg):
+	global flag_for_range
 	if '-' in arg:
 		start, end = arg.split('-')
 		try:
+			flag_for_range = True
 			start = int(start)
 			end = int(end)
 			if start > end:
@@ -42,6 +44,8 @@ def parse_ports(arg):
 
 
 def starting():
+	global flag_for_range
+	flag_for_range = False
 	parser = argparse.ArgumentParser(description="Can pass hostnames, IP addresses, networks, etc.")
 	parser.add_argument("host", help="Hostname or IP address to nmap.")
 	parser.add_argument("-p", "--port", type=parse_ports, help="Specify a port (optional).")
@@ -87,6 +91,18 @@ def reading_ports(importent_ports):
 	return ports, service, models
 	
 
+def scan_for_range(port, service, models, ip):
+	print("PORT", "  STATE", "SERVICE")
+	for p in port:
+		server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+		server.settimeout(1)
+		result = server.connect_ex((ip, p))
+		server.close()
+		time.sleep(0.1)
+		if result == 111:
+			print(models[p - 2], "closed", service[p - 2])
+		if result == 0:
+			print(models[p - 2], "open", service[p - 2])
 
 
 def find_service(port, ports, servie):
@@ -98,7 +114,7 @@ def find_service(port, ports, servie):
 
 def socket_setup(ip, port):
 	server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-	if len(port) == 1:
+	if len(sys.argv) == 3:
 		try:
 			result = server.connect_ex((ip, *port))
 
@@ -133,27 +149,31 @@ def socket_setup(ip, port):
 		models_array = []
 		service_array = []
 		ports, service, models = reading_ports("/home/adel/Desktop/cyber/project2/Nmap/importent_ports")
-		for port, service_name, model in zip(ports, service, models):
-			server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-			server.settimeout(1)
-			result = server.connect_ex((ip, port))
-			if result == 111:
-				closed_ports += 1
-			elif result == 0:
-				ports_array.append(port)
-				status_array.append(result)
-				models_array.append(model)
-				service_array.append(service_name)
-				
+		if flag_for_range == True:
+			scan_for_range(port, service, models, ip)
+		else:
+			for port, service_name, model in zip(ports, service, models):
+				server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+				server.settimeout(1)
+				result = server.connect_ex((ip, port))
+				if result == 111:
+					closed_ports += 1
+				elif result == 0:
+					ports_array.append(port)
+					status_array.append(result)
+					models_array.append(model)
+					service_array.append(service_name)
+			
 			server.close()
 			time.sleep(0.1)
-		print("Not shown:", closed_ports,"closed ports")
-		print("PORT", "  STATE", "SERVICE")
-		for p, s, m, a in zip(ports_array, status_array, models_array, service_array):
-			if s == 0:
-				print(m, "open", a)
-			elif s == 11:
-				print(m, "filltered", a)
+		
+			print("Not shown:", closed_ports,"closed ports")
+			print("PORT", "  STATE", "SERVICE")
+			for p, s, m, a in zip(ports_array, status_array, models_array, service_array):
+				if s == 0:
+					print(m, "open", a)
+				elif s == 11:
+					print(m, "filltered", a)
 
 
 
