@@ -5,6 +5,8 @@ from ping3 import ping, verbose_ping
 import time
 import sys
 from utils_parsing import *
+from nmap import scan_all
+
 
 #############################################################
 def scan_for_range(port, service, models, ip):
@@ -16,43 +18,9 @@ def scan_for_range(port, service, models, ip):
 		server.close()
 		time.sleep(0.1)
 		if result == 111:
-			print(models[p - 2], "closed", service[p - 2])
+			print(models[p - 1], "closed", service[p - 1])
 		if result == 0:
-			print(models[p - 2], "open", service[p - 2])
-
-#############################################################
-def scan_all(ports, service, models, ip):
-	global flag_for_range
-	closed_ports = 0
-	status_array = []
-	ports_array = []
-	models_array = []
-	service_array = []
-	if flag_for_range == True:
-		scan_for_range(port, service, models, ip)
-	else:
-		for port, service_name, model in zip(ports, service, models):
-			server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-			server.settimeout(1)
-			result = server.connect_ex((ip, port))
-			if result == 111:
-				closed_ports += 1
-			elif result == 0:
-				ports_array.append(port)
-				status_array.append(result)
-				models_array.append(model)
-				service_array.append(service_name)
-		
-		server.close()
-		time.sleep(0.1)
-	
-		print("Not shown:", closed_ports,"closed ports")
-		print("PORT", "  STATE", "SERVICE")
-		for p, s, m, a in zip(ports_array, status_array, models_array, service_array):
-			if s == 0:
-				print(m, "open", a)
-			elif s == 11:
-				print(m, "filltered", a)
+			print(models[p - 1], "open", service[p - 1])
 
 #############################################################
 def scan_one(port, ports, ip, service):
@@ -82,19 +50,18 @@ def scan_one(port, ports, ip, service):
 	server.close()
 
 #############################################################
-def socket_setup(ip, port, args):
-	global flag_for_range
+def socket_setup(args):
 	try:
 		ports, service, models = reading_ports("/home/adel/Desktop/cyber/project2/Nmap/importent_ports_tcp")
 	except FileNotFoundError:
 		print("Error: No such file or directory")
 		exit(1)
-
-	if args.p:
-		scan_one(port, ports, ip, service)
-	else:
-		scan_all(ports, service, models, ip)
-
+	if len(sys.argv) == 4 and len(args.port) == 1:
+		scan_one(args.port, ports, args.host, service)
+	elif len(sys.argv) == 4 and len(args.port) != 1:
+		scan_for_range(args.port, service, models, args.host)
+	elif args.port is None:
+		scan_all(ports, service, models, args.host)
 
 
 

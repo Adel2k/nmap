@@ -1,5 +1,6 @@
 from scanning import *
 
+
 #############################################################
 def starting():
 	parser = argparse.ArgumentParser(description="Can pass hostnames, IP addresses, networks, etc.")
@@ -25,15 +26,44 @@ def starting():
 		print("Host is unreachable.")
 	else:
 		print(f"Host is up ({latency:.2f}s latency).")
-	return args, args.host, args.port
+	return args
+
+#############################################################
+
+def scan_all(ports, service, models, ip):
+	closed_ports = 0
+	status_array = []
+	ports_array = []
+	models_array = []
+	service_array = []
+	for port, service_name, model in zip(ports, service, models):
+		server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+		server.settimeout(1)
+		result = server.connect_ex((ip, port))
+		if result == 111:
+			closed_ports += 1
+		elif result == 0:
+			ports_array.append(port)
+			status_array.append(result)
+			models_array.append(model)
+			service_array.append(service_name)
+	
+	server.close()
+	time.sleep(0.1)
+
+	print("Not shown:", closed_ports,"closed ports")
+	print("PORT", "  STATE", "SERVICE")
+	for p, s, m, a in zip(ports_array, status_array, models_array, service_array):
+		if s == 0:
+			print(m, "open", a)
+		elif s == 11:
+			print(m, "filltered", a)
 
 #############################################################
 def main():
 	if len(sys.argv) > 1:
-		args, ip, ports, = starting()
-		global flag_for_range
-		flag_for_range = False
-		socket_setup(ip, ports, args)
+		args = starting()
+		socket_setup(args)
 
 	else: #if no args
 		print("nmap -v -A scanme.nmap.org")

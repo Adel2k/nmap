@@ -46,15 +46,14 @@ def reading_ports(importent_ports):
 
 
 #############################################################
+
 def parse_ports(arg):
-	global flag_for_range
 	if '-' in arg:
 		start, end = arg.split('-')
 		try:
-			flag_for_range = True
 			start = int(start)
 			end = int(end)
-			if start > end:
+			if start >= end:
 				raise argparse.ArgumentTypeError("Start port must be less than or equal to end port.")
 			return list(range(start, end + 1))
 		except ValueError:
