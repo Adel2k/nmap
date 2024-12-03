@@ -1,5 +1,22 @@
 from scanning import *
 
+#############################################################
+def parse_ports(arg):
+	if '-' in arg:
+		start, end = arg.split('-')
+		try:
+			start = int(start)
+			end = int(end)
+			if start >= end:
+				raise argparse.ArgumentTypeError("Start port must be less than or equal to end port.")
+			return list(range(start, end + 1))
+		except ValueError:
+			raise argparse.ArgumentTypeError("Ports must be integers.")
+	else:
+		try:
+			return [int(arg)]
+		except ValueError:
+			raise argparse.ArgumentTypeError("Port must be an integer.")
 
 #############################################################
 def starting():
@@ -29,7 +46,6 @@ def starting():
 	return args
 
 #############################################################
-
 def main():
 	if len(sys.argv) > 1:
 		args = starting()

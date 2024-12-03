@@ -1,6 +1,25 @@
 import re
 import ipaddress
 import argparse
+import socket
+
+#############################################################
+def check_port(ip, port, server, type):
+	server.settimeout(3)
+	# print(port)
+	if type == "udp":
+		try:
+			server.sendto(b"", (ip, port))
+			server.recvfrom(1024)
+			if socket.timeout:
+				return 111
+			return 0
+		except socket.error as e:
+			if e.errno == 111:
+				return 111
+			return 111
+	elif type == "tcp":
+		return server.connect_ex((ip, port))
 
 #############################################################
 def if_ip(arg):
@@ -43,24 +62,4 @@ def reading_ports(importent_ports):
 					service.append(service_name)
 
 	return ports, service, models
-
-
-#############################################################
-
-def parse_ports(arg):
-	if '-' in arg:
-		start, end = arg.split('-')
-		try:
-			start = int(start)
-			end = int(end)
-			if start >= end:
-				raise argparse.ArgumentTypeError("Start port must be less than or equal to end port.")
-			return list(range(start, end + 1))
-		except ValueError:
-			raise argparse.ArgumentTypeError("Ports must be integers.")
-	else:
-		try:
-			return [int(arg)]
-		except ValueError:
-			raise argparse.ArgumentTypeError("Port must be an integer.")
 

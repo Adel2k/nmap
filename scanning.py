@@ -6,25 +6,7 @@ import time
 import sys
 from utils_parsing import *
 
-def check_port(ip, port, server, type):
-	server.settimeout(3)
-	# print(port)
-	if type == "udp":
-		try:
-			server.sendto(b"", (ip, port))
-			server.recvfrom(1024)
-			if socket.timeout:
-				return 111
-			return 0
-		except socket.error as e:
-			if e.errno == 111:
-				return 111
-			return 111
-	elif type == "tcp":
-		return server.connect_ex((ip, port))
-	
 #############################################################
-
 def scan_all(ports, service, models, ip, type):
 	closed_ports = 0
 	status_array = []
@@ -144,6 +126,7 @@ def tcp_scan(args, type):
 		scan_for_range(args.port, service, models, args.host, type)
 
 
+#############################################################
 def udp_scan(args, type):
 	try:
 		ports, service, models = reading_ports("/home/adel/Desktop/cyber/project2/Nmap/importent_ports_udp")
@@ -159,10 +142,11 @@ def udp_scan(args, type):
 	
 
 
+#############################################################
 def socket_setup(type):
 	if type == "udp":
-		server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+		return socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 	elif type == "tcp":
-		server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+		return socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-	return server
+#############################################################
