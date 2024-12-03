@@ -6,7 +6,6 @@ import socket
 #############################################################
 def check_port(ip, port, server, type):
 	server.settimeout(3)
-	# print(port)
 	if type == "udp":
 		try:
 			server.sendto(b"", (ip, port))
@@ -14,6 +13,8 @@ def check_port(ip, port, server, type):
 			if socket.timeout:
 				return 111
 			return 0
+		except KeyboardInterrupt:
+			exit(1)
 		except socket.error as e:
 			if e.errno == 111:
 				return 111

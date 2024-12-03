@@ -26,7 +26,10 @@ def scan_all(ports, service, models, ip, type):
 			service_array.append(service_name)
 	
 		server.close()
-		time.sleep(0.1)
+		try:
+			time.sleep(0.1)
+		except KeyboardInterrupt:
+			exit(1)
 	if len(ports) == closed_ports:
 		print(f"All {closed_ports} scanned ports on {ip} are closed")
 	else:
@@ -53,7 +56,10 @@ def scan_for_range(port, service, models, ip, type):
 			server.settimeout(1)
 			result = check_port(ip, p, server, type)
 			server.close()
-			time.sleep(0.1)
+			try:
+				time.sleep(0.1)
+			except KeyboardInterrupt:
+				exit(1)
 			if result == 111:
 				print(models[p - 1], "closed", service[p - 1])
 			if result == 0:
@@ -64,7 +70,10 @@ def scan_for_range(port, service, models, ip, type):
 			server.settimeout(1)
 			result = check_port(ip, p, server, type)
 			server.close()
-			time.sleep(0.1)
+			try:
+				time.sleep(0.1)
+			except KeyboardInterrupt:
+				exit(1)
 			if result == 111:
 				closed += 1
 			if result == 0:
