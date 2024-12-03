@@ -24,6 +24,7 @@ def starting():
 	parser.add_argument("host", help="Hostname or IP address to nmap.")
 	parser.add_argument("-p", "--port", type=parse_ports, help="Specify a port (optional).")
 	parser.add_argument("-sU", action="store_true", help="Specify a scan (optional).")
+	parser.add_argument("-sT", action="store_true", help="Specify a scan (optional).")
 	args = parser.parse_args()
 
 
@@ -49,10 +50,12 @@ def starting():
 def main():
 	if len(sys.argv) > 1:
 		args = starting()
+		if args.sT:
+			tcp_scan(args, "tcp")
 		if args.sU:
 			udp_scan(args, "udp")
-			exit(0)
-		tcp_scan(args, "tcp")
+		else:
+			tcp_scan(args, "tcp")
 
 	else: #if no args
 		print("nmap -v -A scanme.nmap.org")
