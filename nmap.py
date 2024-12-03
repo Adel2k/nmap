@@ -30,40 +30,13 @@ def starting():
 
 #############################################################
 
-def scan_all(ports, service, models, ip):
-	closed_ports = 0
-	status_array = []
-	ports_array = []
-	models_array = []
-	service_array = []
-	for port, service_name, model in zip(ports, service, models):
-		server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-		server.settimeout(1)
-		result = server.connect_ex((ip, port))
-		if result == 111:
-			closed_ports += 1
-		elif result == 0:
-			ports_array.append(port)
-			status_array.append(result)
-			models_array.append(model)
-			service_array.append(service_name)
-	
-	server.close()
-	time.sleep(0.1)
-
-	print("Not shown:", closed_ports,"closed ports")
-	print("PORT", "  STATE", "SERVICE")
-	for p, s, m, a in zip(ports_array, status_array, models_array, service_array):
-		if s == 0:
-			print(m, "open", a)
-		elif s == 11:
-			print(m, "filltered", a)
-
-#############################################################
 def main():
 	if len(sys.argv) > 1:
 		args = starting()
-		socket_setup(args)
+		if args.sU:
+			udp_scan(args, "udp")
+			exit(0)
+		tcp_scan(args, "tcp")
 
 	else: #if no args
 		print("nmap -v -A scanme.nmap.org")

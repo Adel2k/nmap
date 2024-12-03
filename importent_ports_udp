@@ -998,4 +998,3 @@ oracle-oms	1159/udp	0.000000	# Oracle OMS
 olsv	1160/udp	0.000000	# DB Lite Mult-User Server
 health-polling	1161/udp	0.000000	# Health Polling
 health-trap	1162/udp	0.000330	# Health Trap
-
