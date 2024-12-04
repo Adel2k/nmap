@@ -25,6 +25,7 @@ def starting():
 	parser.add_argument("-p", "--port", type=parse_ports, help="Specify a port (optional).")
 	parser.add_argument("-sU", action="store_true", help="Specify a scan (optional).")
 	parser.add_argument("-sT", action="store_true", help="Specify a scan (optional).")
+	parser.add_argument("-sS", action="store_true", help="Specify a scan (optional).")
 	args = parser.parse_args()
 
 
@@ -54,6 +55,8 @@ def main():
 			tcp_scan(args, "tcp")
 		if args.sU:
 			udp_scan(args, "udp")
+		if args.sS:
+			syn_scan(args, "syn")
 		else:
 			tcp_scan(args, "tcp")
 

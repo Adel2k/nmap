@@ -1,7 +1,17 @@
 import re
 import ipaddress
 import argparse
+import binascii
 import socket
+from headers import *
+from scapy.all import IP, TCP, sr1
+from syn_scan import *
+
+
+def set_header(source_ip, dest_ip, port):
+	ip_header = create_ip_header(source_ip, dest_ip)
+	tcp_header = create_tcp_header(source_ip, dest_ip, 12345, port)
+	return ip_header, tcp_header
 
 #############################################################
 def check_port(ip, port, server, type):
@@ -21,6 +31,22 @@ def check_port(ip, port, server, type):
 			return 111
 	elif type == "tcp":
 		return server.connect_ex((ip, port))
+	elif type == "syn":
+		server.setsockopt(socket.IPPROTO_IP, socket.IP_HDRINCL, 1)
+		ip_header, tcp_header = set_header(socket.gethostbyname(socket.gethostname()), socket.gethostbyaddr(ip)[2][0], port)
+		packet = ip_header + tcp_header
+		server.sendto(packet, (ip, 0))
+		packet, _ = server.recvfrom(65565)
+		flags = debug_packet(packet)
+		result = check_flags(flags)
+		print("Flag check result:", result)
+
+		# recv_packet, addr = server.recvfrom(65565)
+		# print(recv_packet)
+		# flags = unpack_tcp_header(recv_packet)
+		# print(flags)
+		return print(check_flags(flags))
+
 
 #############################################################
 def if_ip(arg):

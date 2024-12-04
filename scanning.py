@@ -38,7 +38,7 @@ def scan_all(ports, service, models, ip, type):
 		for p, s, m, a in zip(ports_array, status_array, models_array, service_array):
 			if s == 0:
 				print(m, "open", a)
-			elif s == 11:
+			elif s == 110:
 				print(m, "filltered", a)
 	
 
@@ -89,7 +89,7 @@ def scan_for_range(port, service, models, ip, type):
 			for p, s, m, a in zip(ports_array, status_array, models_array, service_array):
 				if s == 0:
 					print(m, "open", a)
-				elif s == 11:
+				elif s == 110:
 					print(m, "filltered", a)
 
 #############################################################
@@ -150,6 +150,19 @@ def udp_scan(args, type):
 		scan_for_range(args.port, service, models, args.host, type)
 	
 
+#############################################################
+def syn_scan(args, type):
+	try:
+		ports, service, models = reading_ports("/home/adel/Desktop/cyber/project2/Nmap/importent_ports_tcp")
+	except FileNotFoundError:
+		print("Error: No such file or directory")
+		exit(1)
+	if args.port is None:
+		scan_all(ports, service, models, args.host, type)
+	elif len(args.port) == 1:
+		scan_one(args.port, ports, args.host, service, type)
+	elif len(args.port) != 1:
+		scan_for_range(args.port, service, models, args.host, type)
 
 #############################################################
 def socket_setup(type):
@@ -157,5 +170,7 @@ def socket_setup(type):
 		return socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 	elif type == "tcp":
 		return socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+	elif type == "syn":
+		return socket.socket(socket.AF_INET, socket.SOCK_RAW, socket.IPPROTO_TCP)
 
 #############################################################
