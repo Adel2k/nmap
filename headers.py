@@ -35,7 +35,6 @@ def create_ip_header(source_ip, dest_ip):
 							checksum_placeholder,
 							source_ip,
 							dest_ip)
-
 	ip_checksum = checksum(ip_header)
 	ip_header = struct.pack('!BBHHHBBH4s4s',
 							version_ihl,
@@ -45,7 +44,7 @@ def create_ip_header(source_ip, dest_ip):
 							fragment_offset,
 							ttl,
 							protocol,
-							socket.htons(ip_checksum),
+							ip_checksum,
 							source_ip,
 							dest_ip)
 	return ip_header
@@ -53,7 +52,7 @@ def create_ip_header(source_ip, dest_ip):
 def create_tcp_header(source_ip, dest_ip, source_port, dest_port):
 	seq = 0
 	ack_seq = 0
-	data_offset = 5 << 4
+	data_offset = (5 << 4)
 	flags = 0x02  # SYN flag
 	window = socket.htons(5840)
 	checksum_placeholder = 0
@@ -64,8 +63,8 @@ def create_tcp_header(source_ip, dest_ip, source_port, dest_port):
 								dest_port,
 								seq,
 								ack_seq,
-								data_offset,
-								flags,
+								data_offset | flags,
+								0,
 								window,
 								checksum_placeholder,
 								urgent_pointer)
@@ -85,9 +84,9 @@ def create_tcp_header(source_ip, dest_ip, source_port, dest_port):
 								dest_port,
 								seq,
 								ack_seq,
-								data_offset,
-								flags,
+								data_offset | flags,
+								0,
 								window,
-								socket.htons(tcp_checksum),
+								tcp_checksum,
 								urgent_pointer)
 	return tcp_header

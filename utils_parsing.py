@@ -36,16 +36,15 @@ def check_port(ip, port, server, type):
 		ip_header, tcp_header = set_header(socket.gethostbyname(socket.gethostname()), socket.gethostbyaddr(ip)[2][0], port)
 		packet = ip_header + tcp_header
 		server.sendto(packet, (ip, 0))
-		packet, _ = server.recvfrom(65565)
-		flags = debug_packet(packet)
-		result = check_flags(flags)
-		print("Flag check result:", result)
-
+		recv_socket = socket.socket(socket.AF_INET, socket.SOCK_RAW, socket.IPPROTO_TCP)
+		recv_socket.settimeout(3)
+		packet, _ = recv_socket.recvfrom(65565)
+		flags = unpack_tcp_header(packet)
 		# recv_packet, addr = server.recvfrom(65565)
 		# print(recv_packet)
 		# flags = unpack_tcp_header(recv_packet)
 		# print(flags)
-		return print(check_flags(flags))
+		return (check_flags(flags))
 
 
 #############################################################

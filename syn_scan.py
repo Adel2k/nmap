@@ -1,11 +1,13 @@
 import struct
+import socket
 
 def unpack_tcp_header(packet):
+	ip_header = packet[:20]
 	tcp_header = packet[20:40]
-	tcp_fields = struct.unpack('!HHLLBBHHH', tcp_header)
-	flags = tcp_fields[5]
-	
+	flags= tcp_header[5]
+	print(f"{bin(flags)}")
 	return flags
+
 
 def check_flags(flags):
 	if (flags & 0x12) == 0x12:
