@@ -50,6 +50,7 @@ def starting():
 #############################################################
 def main():
 	if len(sys.argv) > 1:
+		start_time = time.time()
 		args = starting()
 		if args.sT:
 			tcp_scan(args, "tcp")
@@ -59,7 +60,9 @@ def main():
 			syn_scan(args, "syn")
 		else:
 			tcp_scan(args, "tcp")
-
+		end_time = time.time()
+		duration = end_time - start_time
+		print(f"Nmap done: 1 IP addres scanned in {duration:.2f} seconds")
 	else: #if no args
 		print("nmap -v -A scanme.nmap.org")
 		print("nmap -v -sn 192.168.0.0/16 10.0.0.0/8")

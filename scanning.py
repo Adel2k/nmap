@@ -61,9 +61,9 @@ def scan_for_range(port, service, models, ip, type):
 			except KeyboardInterrupt:
 				exit(1)
 			if result == 111:
-				print(models[p - 1], "closed", service[p - 1])
+				print(models[p - 2], "closed", service[p - 2])
 			if result == 0:
-				print(models[p - 1], "open", service[p - 1])
+				print(models[p - 2], "open", service[p - 2])
 	else:
 		for p in port:
 			server = socket_setup(type)
