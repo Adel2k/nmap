@@ -123,7 +123,7 @@ def scan_one(port, ports, ip, service, type):
 #############################################################
 def tcp_scan(args, type):
 	try:
-		ports, service, models = reading_ports("/home/adel/Desktop/cyber/project2/Nmap/importent_ports_tcp")
+		ports, service, models = reading_ports("./importent_ports_tcp")
 	except FileNotFoundError:
 		print("Error: No such file or directory")
 		exit(1)
@@ -138,7 +138,7 @@ def tcp_scan(args, type):
 #############################################################
 def udp_scan(args, type):
 	try:
-		ports, service, models = reading_ports("/home/adel/Desktop/cyber/project2/Nmap/importent_ports_udp")
+		ports, service, models = reading_ports("./importent_ports_udp")
 	except FileNotFoundError:
 		print("Error: No such file or directory")
 		exit(1)
@@ -153,7 +153,7 @@ def udp_scan(args, type):
 #############################################################
 def syn_scan(args, type):
 	try:
-		ports, service, models = reading_ports("/home/adel/Desktop/cyber/project2/Nmap/importent_ports_tcp")
+		ports, service, models = reading_ports("./importent_ports_tcp")
 	except FileNotFoundError:
 		print("Error: No such file or directory")
 		exit(1)
