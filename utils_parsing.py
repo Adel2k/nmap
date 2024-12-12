@@ -30,7 +30,10 @@ def check_port(ip, port, server, type):
 				return 111
 			return 111
 	elif type == "tcp":
-		return server.connect_ex((ip, port))
+		try:
+			return server.connect_ex((ip, port))
+		except KeyboardInterrupt:
+			exit(1)
 	elif type == "syn":
 		server.setsockopt(socket.IPPROTO_IP, socket.IP_HDRINCL, 1)
 		ip_header, tcp_header = set_header(socket.gethostbyname(socket.gethostname()), socket.gethostbyaddr(ip)[2][0], port)

@@ -28,21 +28,16 @@ def starting():
 	parser.add_argument("-sS", action="store_true", help="Specify a scan (optional).")
 	args = parser.parse_args()
 
-
 	now = datetime.now()
 	today = datetime.today()
-	if if_ip(args.host) == True:
-		name = socket.gethostbyaddr(args.host)[0]
-	else:
-		name = args.host
-
+	name = args.host
 	user_ip = socket.gethostbyname(name)
 	latency = ping(user_ip, unit='ms')
-
 	print("Starting Nmap RELQ at", today.date().isoformat() ,now.strftime("%H:%M"))
 	print(f"Nmap scan report for {name} ({user_ip})")
 	if latency is None:
 		print("Host is unreachable.")
+		exit(1)
 	else:
 		print(f"Host is up ({latency:.2f}s latency).")
 	return args
@@ -52,13 +47,17 @@ def main():
 	if len(sys.argv) > 1:
 		start_time = time.time()
 		args = starting()
+		mtela = False 
 		if args.sT:
 			tcp_scan(args, "tcp")
+			mtela = True
 		if args.sU:
 			udp_scan(args, "udp")
+			mtela = True
 		if args.sS:
 			syn_scan(args, "syn")
-		else:
+			mtela = True
+		if mtela == False:
 			tcp_scan(args, "tcp")
 		end_time = time.time()
 		duration = end_time - start_time
